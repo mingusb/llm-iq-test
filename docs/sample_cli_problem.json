@@ -1,0 +1,59 @@
+{
+  "class": "pi",
+  "clause_size": 2,
+  "clauses": [
+    [
+      2,
+      -1
+    ],
+    [
+      2,
+      -3
+    ],
+    [
+      -1,
+      4
+    ],
+    [
+      3,
+      -4
+    ],
+    [
+      1,
+      -3
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      1,
+      -3
+    ],
+    [
+      3,
+      -2
+    ]
+  ],
+  "format_version": 1,
+  "level": 2,
+  "num_clauses": 8,
+  "num_vars": 4,
+  "quantifier_blocks": [
+    {
+      "quantifier": "forall",
+      "variables": [
+        1,
+        2
+      ]
+    },
+    {
+      "quantifier": "exists",
+      "variables": [
+        3,
+        4
+      ]
+    }
+  ],
+  "seed": 22
+}

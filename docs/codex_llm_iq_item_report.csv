@@ -1,0 +1,7 @@
+id,level,truth,model_answer,correct,valid_response,timed_out,codex_returncode
+1,1,True,True,True,True,False,0
+2,2,True,True,True,True,False,0
+3,4,False,False,True,True,False,0
+4,8,False,,False,False,True,124
+5,6,False,,False,False,True,124
+6,5,False,False,True,True,False,0

@@ -1,0 +1,9 @@
+docs/AGENT_STATE.md
+docs/PLAN.md
+docs/REQUIREMENTS.md
+docs/FEATURES.json
+docs/TEST_LOG.md
+docs/KNOWLEDGE_BASE.md
+metadata_archives/
+__pycache__/
+*.pyc

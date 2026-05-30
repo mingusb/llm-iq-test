@@ -1,37 +1,62 @@
-# 🧪 llm-iq-test
+# 🧪 llm-iq-test | Quantified Boolean Formula Generator & LLM IQ Assessor
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.x-blue?style=for-the-badge" alt="Python">
-  <img src="https://img.shields.io/badge/status-active-success?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge" alt="Python Language">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Active Status">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build Passing">
 </p>
 
-<p align="center"><b>This repository provides utilities to generate quantified Boolean formula (QBF) problems at any finite polynomial-hierarchy level and to assess the highest level an LLM can solve as an IQ proxy.</b></p>
+**Generate quantified Boolean formula (QBF) problems at any polynomial-hierarchy level to evaluate and benchmark the reasoning IQ of Large Language Models.**
 
----
-
-## 📑 Index
+## 📑 Table of Contents
 - [🚀 Overview](#-overview)
-- [🏁 Quickstart](#-quickstart)
-- [📦 Prerequisites & Dependencies](#-prerequisites--dependencies)
-
----
+- [💻 Installation & Setup](#-installation--setup)
+- [💡 Usage](#-usage)
+- [🐛 Issues & Support](#-issues--support)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
 ## 🚀 Overview
 
-This harness labels each level by the number of quantifier blocks in the QBF. In Complexity Zoo terms, true QBF with k alternations starting with an existential block is Sigma_k^P-complete; starting with a universal block is Pi_k^P-complete. The generator matches that quantifier structure, so the level labels map to PH tiers, but the mapping is structural rather than a proof of worst-case hardness:
+This harness labels each level by the number of quantifier blocks in the QBF. In Complexity Zoo terms, true QBF with k alternations starting with an existential block is Sigma_k^P-complete; starting with a universal block is Pi_k^P-complete. The generator matches that quantifier structure, so the level labels map to PH tiers, but the mapping is structural rather than a proof of worst-case hardness.
 
-- Instances are synthetic and do not guarantee completeness or worst-case hardness for the corresponding PH class.
-- The certified constructions and variable caps bias the distribution of instances; results reflect this benchmark, not class membership.
-- The IQ proxy reports the highest level solved on sampled instances and uses monotonic assumptions in binary/auto search modes.
+> [!NOTE]
+> - Instances are synthetic and do not guarantee completeness or worst-case hardness for the corresponding PH class.
+> - The certified constructions and variable caps bias the distribution of instances; results reflect this benchmark, not class membership.
+> - The IQ proxy reports the highest level solved on sampled instances and uses monotonic assumptions in binary/auto search modes.
 
 ### Formats
 
 - QDIMACS output includes alternating quantifier blocks followed by CNF clauses.
 - JSON output includes quantifier blocks, clauses, and metadata.
 
----
+Example structure of generated problem:
+```bash
+$ python -m ph_iq.cli generate --level 2 --class pi --vars 8
+# Example Output format
+# p cnf 8 20
+# a 1 2 3 4 0
+# e 5 6 7 8 0
+# ...
+```
 
-## 🏁 Quickstart
+## 💻 Installation & Setup
+
+### Prerequisites
+
+- Python 3.x
+
+### Installation
+
+Clone the repository and run the scripts directly:
+
+```bash
+git clone https://github.com/mingusb/llm-iq-test.git
+cd llm-iq-test
+```
+
+## 💡 Usage
 
 ### Generate problems
 
@@ -111,10 +136,21 @@ Outputs:
 - `llm_iq_prompt_corpus/level_0001.txt` .. `llm_iq_prompt_corpus/level_1000.txt`
 - `llm_iq_prompt_corpus/answers.csv`
 
----
+## 🐛 Issues & Support
 
-## 📦 Prerequisites & Dependencies
+If you encounter any problems or have suggestions, please open an issue in the [GitHub issue tracker](https://github.com/mingusb/llm-iq-test/issues).
 
-- Python 3.x
+## 🤝 Contributing
 
----
+We welcome contributions! Please follow these steps to contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'feat: add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+*Check out my other projects on my [GitHub Profile](https://github.com/mingusb).*
